@@ -187,7 +187,7 @@ func scoreDialogue(text string, candidates map[string]*Candidate) {
 	// 0. Portmanteau decomposition — "MaiAji" → Mai + Ajisai.
 	decomposePortmanteaux(text, candidates)
 
-	// 1. Honouifics — strongest signal.
+	// 1. Honorifics — strongest signal.
 	for _, m := range honourificRx.FindAllStringSubmatch(text, -1) {
 		name := normaliseName(m[1])
 		c := candidates[name]
